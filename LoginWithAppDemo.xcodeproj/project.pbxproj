@@ -476,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LoginWithAppDemo/LoginWithAppDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B2UQ62U4FS;
+				DEVELOPMENT_TEAM = Y52CTHF5NC;
 				INFOPLIST_FILE = "$(SRCROOT)/LoginWithAppDemo/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LoginWithAppDemo/LoginWithAppDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B2UQ62U4FS;
+				DEVELOPMENT_TEAM = Y52CTHF5NC;
 				INFOPLIST_FILE = "$(SRCROOT)/LoginWithAppDemo/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
