@@ -9,10 +9,17 @@ import Foundation
 import UIKit
 import AuthenticationServices
 
-class AppleSignInClient: NSObject {
-    static var shared = AppleSignInClient()
+protocol AppleSignInClientProtocol {
+    func handleAppleIdRequest(block: @escaping (_ fullname: String?, _ email: String?, _ userId: String?, _ message: String?) -> Void)
+}
+
+class AppleSignInClient: NSObject, AppleSignInClientProtocol {
+    
+    //MARK: Properties
+    static var shared: AppleSignInClientProtocol = AppleSignInClient()
     var completionHandler: (_ fullname: String?, _ email: String?, _ userId: String?, _ message: String?) -> Void = { _, _, _,_  in }
 
+    //MARK: Methods
     @available(iOS 13.0, *) // sign in with apple is not available below iOS13
     @objc func handleAppleIdRequest(block: @escaping (_ fullname: String?, _ email: String?, _ userId: String?, _ message: String?) -> Void) {
         completionHandler = block
@@ -25,7 +32,7 @@ class AppleSignInClient: NSObject {
     }
 
     @available(iOS 13.0, *) // sign in with apple is not available below iOS13
-    func getCredentialState(fullname: String, email: String, userID: String ) {
+    private func getCredentialState(fullname: String, email: String, userID: String ) {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         appleIDProvider.getCredentialState(forUserID: userID) { [weak self] credentialState, _ in
             guard let self = self else { return }
